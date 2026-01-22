@@ -47,5 +47,5 @@ document.addEventListener('DOMContentLoaded', function() {
     // When 'addItemButton' receives a 'click' event, the 'handleButtonClick' function will execute.
     addItemButton.addEventListener('click', handleButtonClick);
 
-    totalDisplayElement.textContent = `Welcome, ${userName}! Click the button below to start counting!`;
+    // totalDisplayElement.textContent = `Welcome, ${userName}! Click the button below to start counting!`;
 });
