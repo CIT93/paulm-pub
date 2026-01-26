@@ -2,6 +2,8 @@ console.log('Hello from app.js! Your JavaScript is connected and running!');
 // --- Part 1: Select HTML Elements ----
 // We use document.getElementById() to get a reference to an element by its unique ID.
 
+import * as orderForm from './order-handler.js';
+
 const totalDisplayElement = document.getElementById('total-display');
 const addItemButton = document.getElementById('add-item-btn');
 
@@ -37,15 +39,9 @@ const handleButtonClick = function() {
 };
 
 // handleButtonClick();
-
 document.addEventListener('DOMContentLoaded', function() {
-    // --- Part 3: Make the Button Clickable (Event Listener) ---
-    // This part ensures our JavaScript code runs only AFTER the HTML is fully loaded and parsed.
-    // The 'DOMContentLoaded' event is perfect for this. It fires when the HTML document is ready.
     console.log('DOM fully loaded and parsed, App is read for interaction');
-    // Attach an event listener to our 'addItemButton.
-    // When 'addItemButton' receives a 'click' event, the 'handleButtonClick' function will execute.
     addItemButton.addEventListener('click', handleButtonClick);
-
-    // totalDisplayElement.textContent = `Welcome, ${userName}! Click the button below to start counting!`;
 });
+
+
