@@ -27,7 +27,7 @@ const getSelectedSizeValue = function(sizeRadios) {
 
 export const getOrderInputs = function() {
     return {
-        quantity: parseInt(qtyField.value) || 1,
+        qty: parseInt(qtyField.value) || 1,
         size: getSelectedSizeValue(sizeRadios),
         giftWrap: giftWrapCheckbox.checked
     };
