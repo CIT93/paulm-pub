@@ -32,3 +32,11 @@ export const getOrderInputs = function() {
         giftWrap: giftWrapCheckbox.checked
     };
 };
+
+export const clearForm = function() {
+    orderForm.reset();
+    qtyField.value = 1;
+    sizeRadios[0].checked = true;
+    giftWrapCheckbox.checked = false;
+    console.log('form cleared');
+};
