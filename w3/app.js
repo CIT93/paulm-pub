@@ -13,8 +13,7 @@ const handleOrderSubmit = function(event) {
     event.preventDefault();
     const formData = orderForm.getOrderInputs();
     totalShirts += formData.qty;
-    let message = `Ordered ${formData.qty} ${formData.size} T-Shirt(s)${formData.giftWrap ? ' with' : ' without'} gift wrap.`;
-    orderSummary.textContent = message;
+    orderSummary.textContent = `You ordered ${formData.qty} ${formData.size} T-Shirt(s)${formData.giftWrap ? ' with' : ' without'} gift wrap.`;
 };
 
 const init = function() {
