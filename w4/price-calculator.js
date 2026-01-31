@@ -9,9 +9,10 @@ const calculatePrice = function(data){
 
 export const calculateTotal = function(data){
     const calculateTotal = calculatePrice(data);
-        return {
-            totalPrice: calculateTotal,
-        };
+    console.log('total = ',calculateTotal)
+    return {
+        totalPrice: calculateTotal,
+    };
 };
 
 

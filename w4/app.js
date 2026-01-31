@@ -4,9 +4,9 @@ console.log('Hello from app.js! Your JavaScript is connected and running!');
 
 import * as orderForm from './order-handler.js';
 import * as priceCalculator from './price-calculator.js';
+import * as resultsDisplay from './results-display.js';
 
 const orderFormElement = document.getElementById('order-form');
-const orderSummary = document.getElementById('order-summary');
 
 const orders = [];
 
@@ -26,21 +26,20 @@ const handleOrderSubmit = function(event) {
 
     orders.push(newOrder);
     console.log(orders);
-    
-    totalShirts += formData.qty;
-    orderSummary.textContent = `You ordered ${formData.qty} ${formData.size} T-Shirt(s)${formData.giftWrap ? ' with' : ' without'} gift wrap.`;
+    resultsDisplay.displayResults(calcData,formData);
 };
 
 const handleClearForm = function() {
     orderForm.clearForm();
-    orderSummary.textContent = 'Order Details will appear here...';
     console.log('reset form button clicked');
+    resultsDisplay.hideResults();
 };
 
 const init = function() {
     console.log('App Initialized');
     orderFormElement.addEventListener('submit', handleOrderSubmit);
-    orderFormElement.addEventListener('reset', handleClearForm);    
+    orderFormElement.addEventListener('reset', handleClearForm);
+    resultsDisplay.hideResults();
 };
 
 document.addEventListener('DOMContentLoaded', init);
