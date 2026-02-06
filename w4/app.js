@@ -26,7 +26,8 @@ const handleOrderSubmit = function(event) {
 
     orders.push(newOrder);
     console.log(orders);
-    resultsDisplay.displayResults(calcData,formData);
+    // resultsDisplay.displayResults(calcData,formData);
+    resultsDisplay.displayResults(newOrder);
 };
 
 const handleClearForm = function() {
