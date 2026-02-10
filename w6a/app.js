@@ -1,6 +1,4 @@
 console.log('Hello from app.js! Your JavaScript is connected and running!');
-// --- Part 1: Select HTML Elements ----
-// We use document.getElementById() to get a reference to an element by its unique ID.
 
 import * as orderForm from './order-handler.js';
 import * as priceCalculator from './price-calculator.js';
@@ -16,7 +14,6 @@ const handleOrderSubmit = function(event) {
     event.preventDefault();
     const formData = orderForm.getOrderInputs();
     const calcData = priceCalculator.calculateTotal(formData);
-    // console.log('Total calculated: ', calcData);
 
     const newOrder = {
         ...formData,
@@ -26,8 +23,7 @@ const handleOrderSubmit = function(event) {
 
     orders.push(newOrder);
     console.log(orders);
-    // resultsDisplay.displayResults(calcData,formData);
-    resultsDisplay.displayResults(newOrder);
+    resultsDisplay.displayResults(newOrder);//completed this in a previouse module
 };
 
 const handleClearForm = function() {
