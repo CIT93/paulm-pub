@@ -19,7 +19,7 @@ const giftWrapCheckbox = orderForm.querySelector('#gift-wrap');
 const getSelectedSizeValue = function(sizeRadios) {
     for(const radio of sizeRadios) {
         if(radio.checked) {
-            console.log(`Selected size: ${radio.value} and it is ${radio.checked}`);
+            // console.log(`Selected size: ${radio.value} and it is ${radio.checked}`);
             return radio.value;
         };
     };

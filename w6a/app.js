@@ -3,6 +3,7 @@ console.log('Hello from app.js! Your JavaScript is connected and running!');
 import * as orderForm from './order-handler.js';
 import * as priceCalculator from './price-calculator.js';
 import * as resultsDisplay from './results-display.js';
+import * as orderStorage from './order-storage.js';
 
 const orderFormElement = document.getElementById('order-form');
 
@@ -34,6 +35,13 @@ const handleClearForm = function() {
 
 const init = function() {
     console.log('App Initialized');
+    const loadedEntries = orderStorage.loadOrders();
+    if (loadedEntries.length > 0){
+        orders.push(...loadedEntries);
+        console.log('Data loaded from localStorage');
+    }else{
+        console.log('No data found in localStorage');
+    }
     orderFormElement.addEventListener('submit', handleOrderSubmit);
     orderFormElement.addEventListener('reset', handleClearForm);
     resultsDisplay.hideResults();

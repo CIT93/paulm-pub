@@ -9,7 +9,7 @@ const calculatePrice = function(data){
 
 export const calculateTotal = function(data){
     const calculateTotal = calculatePrice(data);
-    console.log('total = ',calculateTotal)
+    // console.log('total = ',calculateTotal)
     return {
         totalPrice: calculateTotal,
     };
