@@ -1,6 +1,6 @@
 
 const orderTable = document.getElementById('order-table');
-const orderList = orderTable.querySelector('#order-table-body');
+const orderList = document.getElementById('order-table-body');
 const noEntriesMessage = document.getElementById('noEntriesMessage');
 const clearAllDataButton = document.getElementById('clearAllButton')
 
