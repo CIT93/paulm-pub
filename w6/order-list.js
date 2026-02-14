@@ -1,6 +1,6 @@
 
-const orderTable = document.getElementById('order-talble');
-const orderList = orderTable.querySelector('order-table-body');
+const orderTable = document.getElementById('order-table');
+const orderList = orderTable.querySelector('tbody');
 const noEntriesMessage = document.getElementById('noEntriesMessage');
 
 const formatDateForDisplay = function(timestamp){
@@ -12,14 +12,14 @@ const formatDateForDisplay = function(timestamp){
 
 const createTableRow = function(entry){
     const row = document.createElement('tr');
-    row.dataset.id = entry.id;
     row.innerHTML = `
         <td>${formatDateForDisplay(entry.timestamp)}</td>
         <td>${entry.qty}</td>
         <td>${entry.size}</td>
-        <td>${entry.totalPrice}</td>
+        <td>$${entry.totalPrice}</td>
         `;
-}
+    return row;
+};
 
 export const renderOrders = function(orders){
     orderList.innerHTML = '';
@@ -33,7 +33,7 @@ export const renderOrders = function(orders){
     };
 
     const sortedOrders = [...orders].sort(function(a,b){
-        return new Date(b.timestamp) - new Date(a.timestamp)
+        return new Date(b.timestamp) - new Date(a.timestamp);
     });
 
     for (const order of sortedOrders){

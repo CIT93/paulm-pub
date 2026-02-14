@@ -2,8 +2,9 @@ console.log('Hello from app.js! Your JavaScript is connected and running!');
 
 import * as orderForm from './order-handler.js';
 import * as priceCalculator from './price-calculator.js';
-import * as resultsDisplay from './results-display.js';
+// import * as resultsDisplay from './results-display.js';
 import * as orderStorage from './order-storage.js';
+import * as orderList from './order-list.js';
 
 const orderFormElement = document.getElementById('order-form');
 
@@ -25,13 +26,14 @@ const handleOrderSubmit = function(event) {
     orders.push(newOrder);
     console.log(orders);
     orderStorage.saveOrders(orders);
-    resultsDisplay.displayResults(newOrder);//completed this in a previouse module
+    // resultsDisplay.displayResults(newOrder);//completed this in a previouse module
+    orderList.renderOrders(orders);
 };
 
 const handleClearForm = function() {
     orderForm.clearForm();
     console.log('reset form button clicked');
-    resultsDisplay.hideResults();
+    // resultsDisplay.hideResults();
 };
 
 const init = function() {
@@ -40,12 +42,13 @@ const init = function() {
     if (loadedEntries.length > 0){
         orders.push(...loadedEntries);
         console.log('Data loaded from localStorage');
+        orderList.renderOrders(orders);
     }else{
         console.log('No data found in localStorage');
-    }
+    };
     orderFormElement.addEventListener('submit', handleOrderSubmit);
     orderFormElement.addEventListener('reset', handleClearForm);
-    resultsDisplay.hideResults();
+    // resultsDisplay.hideResults();
 };
 
 document.addEventListener('DOMContentLoaded', init);
