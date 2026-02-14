@@ -54,3 +54,23 @@ p {
     background-color: #eef4f7;
     cursor: default;
 }
+
+.danger-button {
+    background-color: #dc3545;
+    color: white;
+    margin-bottom: 20px;
+}
+
+.danger-button:hover {
+    background-color: #c82333;
+    transform: translateY(-2px);
+}
+
+.danger-button.confirm-state {
+    background-color: #ffc107;
+    color: #343a40;
+}
+
+.danger-button.confirm-state:hover {
+    background-color: #e0a800;
+}

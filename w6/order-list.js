@@ -2,6 +2,7 @@
 const orderTable = document.getElementById('order-table');
 const orderList = orderTable.querySelector('tbody');
 const noEntriesMessage = document.getElementById('noEntriesMessage');
+const clearAllDataButton = document.getElementById('clearAllButton')
 
 const formatDateForDisplay = function(timestamp){
     const date = new Date(timestamp);
@@ -26,10 +27,12 @@ export const renderOrders = function(orders){
     if (orders.length === 0){
         orderTable.style.display = 'none';
         noEntriesMessage.style.display = 'block';
+        clearAllDataButton.style.display = 'none';
         return;
     }else{
         orderTable.style.display = 'table';
         noEntriesMessage.style.display = 'none';
+        clearAllDataButton.style.display = 'block';
     };
 
     const sortedOrders = [...orders].sort(function(a,b){

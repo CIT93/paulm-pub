@@ -22,3 +22,8 @@ export const loadOrders = function(){
         localStorage.removeItem(LOCAL_STORAGE_KEY);
     };
 };
+
+export const clearAllData = function(){
+    localStorage.removeItem(LOCAL_STORAGE_KEY);
+    console.log('Entries cleared from localStorage');
+}
