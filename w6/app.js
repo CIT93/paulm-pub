@@ -9,7 +9,6 @@ const orderFormElement = document.getElementById('order-form');
 const clearAllDataButton = document.getElementById('clearAllButton');
 const orders = [];
 
-let totalShirts = 1;
 let isConfirmingClearAll = false;
 let clearAllTimeout = null;
 
