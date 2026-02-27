@@ -6,11 +6,8 @@
 // Reference to the main carbon footprint form for event listening
 const carbonFootprintForm = document.getElementById('carbonFootprintForm');
 
-// Reference to the specific numeric input for household member counts
-const householdMembersInput = carbonFootprintForm.querySelector('#householdMembers');
-
-// Home Size reference
-const homeSquareFootageInput = carbonFootprintForm.querySelector('#homeSquareFootage');
+const hhMembersInput = document.getElementById('householdMembers'); // renamed here
+const homeSquareFootageInput = document.getElementById('homeSquareFootage');
 
 // Apartment Checkbox reference
 const isApartmentInput = carbonFootprintForm.querySelector('#isApartment');
@@ -40,25 +37,9 @@ const getSelectedRadioValue = function (radioButtons) {// Write a function to ha
 // Collects all relevant input values from the form for Household Size, Home Size, and Food Choices.
 // @returns {Object} An object containing all the collected input values.
 export const getFormInputs = function() {
-    // console.log('Get Form Inputs');
-
-    // Read the 'value' from number inputs and convert to numbers
-    // Read the 'checked' property for checkboxes.
-    
-    // Declare a locally scoped valued for square footage
-    // const homeSquareFootage = parseInt(homeSquareFootageInput.value) || 0;
-    // Declare a locally scoped valued is apartment
-    // const isApartment = isApartmentInput.checked;
-    // return houseHoldMember to app.js handleFormSubmit function
-    // Refactor return to be an object literal
-    // const objLiteral = {
-    //     householdMembers: parseInt(householdMembersInput.value) || 1,
-    //     homeSquareFootage: parseInt(homeSquareFootageInput.value) || 0,
-    //     isApartment: isApartmentInput.checked
-    // }
-
     return {
-        householdMembers: parseInt(householdMembersInput.value) || 1,
+        // Look closely at the line below
+        householdMembers: parseInt(householdMembersInput.value) || 1, 
         homeSquareFootage: parseInt(homeSquareFootageInput.value) || 0,
         isApartment: isApartmentInput.checked,
         dietType: getSelectedRadioValue(dietTypeRadios),
