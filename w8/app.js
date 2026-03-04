@@ -35,7 +35,9 @@ const handleOrderSubmit = function(event) {
     const newOrder = {
         ...formData,
         ...calcData,
-        timestamp: new Date().toISOString()
+        timestamp: new Date().toISOString(),
+        id: Date.now().toString()
+
     };
 
     orders.push(newOrder);
