@@ -5,6 +5,8 @@ const noEntriesMessage = document.getElementById('noEntriesMessage');
 const clearAllDataButton = document.getElementById('clearAllButton');
 const tableBody = document.getElementById('order-table-body');
 
+let moduleCallbacks = {};
+
 const formatDateForDisplay = function(timestamp){
     const date = new Date(timestamp);
     return date.toLocaleDateString('en-US',{
@@ -32,10 +34,16 @@ tableBody.addEventListener('click', function(event){
     const target = event.target;
     const id = target.dataset.id;
     if(!id)return;
-    console.log('Button clicked with ID:',id);
+    // console.log('Button clicked with ID:', id);
+    if(target.classList.contains('edit') && typeof moduleCallbacks.onEdit === 'function'){
+        moduleCallbacks.onEdit(id);
+    }else if(target.classList.contains('delete') && typeof moduleCallbacks.onDelete === 'function'){
+        moduleCallbacks.onDelete(id);
+    };
 });
 
-export const renderOrders = function(orders){
+export const renderOrders = function(orders, callbacks){
+    moduleCallbacks = callbacks;
     orderList.innerHTML = '';
     if (orders.length === 0){
         orderTable.style.display = 'none';

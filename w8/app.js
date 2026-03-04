@@ -43,7 +43,18 @@ const handleOrderSubmit = function(event) {
     orders.push(newOrder);
     console.log(orders);
     orderStorage.saveOrders(orders);
-    orderList.renderOrders(orders);
+    orderList.renderOrders(orders, {
+        onEdit: handleEditRow,
+        onDelete: handleDeleteRow
+    });
+};
+
+const handleDeleteRow = function(id){
+    console.log('App.js: Requesting delete Row with ID:', id);
+};
+
+const handleEditRow = function(id){
+    console.log('App.js: Requesting edit Row with ID:', id);
 };
 
 const performClearAllData = function(){
@@ -67,7 +78,10 @@ const init = function() {
     if (loadedEntries.length > 0){
         orders.push(...loadedEntries);
         console.log('Data loaded from localStorage');
-        orderList.renderOrders(orders);
+        orderList.renderOrders(orders, {
+        onEdit: handleEditRow,
+        onDelete: handleDeleteRow
+    });
     }else{
         console.log('No data found in localStorage');
     };
