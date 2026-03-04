@@ -34,7 +34,6 @@ tableBody.addEventListener('click', function(event){
     const target = event.target;
     const id = target.dataset.id;
     if(!id)return;
-    // console.log('Button clicked with ID:', id);
     if(target.classList.contains('edit') && typeof moduleCallbacks.onEdit === 'function'){
         moduleCallbacks.onEdit(id);
     }else if(target.classList.contains('delete') && typeof moduleCallbacks.onDelete === 'function'){

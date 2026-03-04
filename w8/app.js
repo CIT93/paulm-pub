@@ -37,7 +37,6 @@ const handleOrderSubmit = function(event) {
         ...calcData,
         timestamp: new Date().toISOString(),
         id: Date.now().toString()
-
     };
 
     orders.push(newOrder);
@@ -68,7 +67,6 @@ const performClearAllData = function(){
 const handleClearForm = function() {
     orderForm.clearForm();
     console.log('reset form button clicked');
-    // resultsDisplay.hideResults();
     resetAllUIStates();
 };
 
