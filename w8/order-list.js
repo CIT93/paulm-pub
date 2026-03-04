@@ -2,7 +2,8 @@
 const orderTable = document.getElementById('order-table');
 const orderList = document.getElementById('order-table-body');
 const noEntriesMessage = document.getElementById('noEntriesMessage');
-const clearAllDataButton = document.getElementById('clearAllButton')
+const clearAllDataButton = document.getElementById('clearAllButton');
+const tableBody = document.getElementById('order-table-body');
 
 const formatDateForDisplay = function(timestamp){
     const date = new Date(timestamp);
@@ -26,6 +27,13 @@ const createTableRow = function(entry){
         `;
     return row;
 };
+
+tableBody.addEventListener('click', function(event){
+    const target = event.target;
+    const id = target.dataset.id;
+    if(!id)return;
+    console.log('Button clicked with ID:',id);
+});
 
 export const renderOrders = function(orders){
     orderList.innerHTML = '';
