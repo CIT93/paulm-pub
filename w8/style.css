@@ -74,3 +74,78 @@ p {
 .danger-button.confirm-state:hover {
     background-color: #e0a800;
 }
+.action-button {
+    padding: 8px 12px;
+    font-size: 0.85em;
+    margin: 0 5px;
+    border-radius: 5px;
+}
+
+.action-button.edit {
+    background-color: #007bff;
+    color: white;
+}
+
+.action-button.edit:hover {
+    background-color: #0056b3;
+}
+
+.action-button.delete {
+    background-color: #dc3545;
+    color: white;
+}
+
+.action-button.delete:hover {
+    background-color: #c82333;
+}
+
+.action-button.confirm {
+    background-color: #dc3545;
+    color: white;
+}
+
+.action-button.confirm:hover {
+    background-color: #c82333;
+}
+
+.action-button.cancel {
+    background-color: #6c757d;
+    color: white;
+}
+
+.action-button.cancel:hover {
+    background-color: #5a6268;
+}
+
+.danger-button {
+    background-color: #dc3545;
+    color: white;
+    margin-bottom: 20px;
+}
+
+.danger-button:hover {
+    background-color: #c82333;
+    transform: translateY(-2px);
+}
+
+.danger-button.confirm-state {
+    background-color: #ffc107;
+    color: #343a40;
+}
+
+.danger-button.confirm-state:hover {
+    background-color: #e0a800;
+}
+
+/* NEW: Action button styles (for Edit/Delete/Confirm/Cancel in table) */
+.action-button {
+    display: inline-block; 
+    padding: 4px 6px;
+    font-size: 0.85em;
+    margin: 0 5px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    text-decoration: none; 
+}

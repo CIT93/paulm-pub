@@ -18,6 +18,11 @@ const createTableRow = function(entry){
         <td>${entry.qty}</td>
         <td>${entry.size}</td>
         <td>$${entry.totalPrice}</td>
+        <td class="action-cell">
+        <button class="action-button edit" data-id="${entry.id}">Edit</button>
+        <p>
+        <button class="action-button delete" data-id="${entry.id}">Delete</button>
+        </td>
         `;
     return row;
 };
